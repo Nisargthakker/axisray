@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>SB Admin 2 - Tables</title>
+
+    <!-- Custom fonts for this template -->
+    <link
+      href="resources/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="resources/css/sb-admin-2.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this page -->
+    <link
+      href="resources/vendor/datatables/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+
+      <div id="menu"></div>
+
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Topbar -->
+
+          <div id="header"></div>
+
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid">
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+              <div
+                class="card-header py-3 d-flex justify-content-between align-items-center"
+              >
+                <h6 class="m-0 font-weight-bold text-primary">
+                  Student Details
+                </h6>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary"
+                  data-toggle="modal"
+                  data-target=".bd-example-modal-lg"
+                >
+                  Add New
+                </button>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table
+                    class="table table-bordered"
+                    id="dataTable"
+                    width="100%"
+                    cellspacing="0"
+                  >
+                    <thead>
+                      <tr>
+                        <th>Id</th>
+                        <th>imageUrl</th>
+                        <th>firstName</th>
+                        <th>lastName</th>
+                        <th>email</th>
+                        <th>contactnumber</th>
+                        <th>Age</th>
+                        <th>DOB</th>
+                        <th>Salary</th>
+                        <th>Address</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="userDetailsTbody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+
+        <div id="footer"></div>
+
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <!------------------ Add New Student Modal ------------------>
+    <div
+      class="modal fade bd-example-modal-lg"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl input-group">
+        <div class="modal-content">
+          <form id="addStudentDetailsForm">
+            <div class="modal-header">
+              <h5 class="modal-title m-0 font-weight-bold text-primary">
+                Add Student
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="firstName">First Name <sup>*</sup></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      name="firstName"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="middleName">Middle Name <sup>*</sup></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="middleName"
+                      name="middleName"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="lastName">Last Name <sup>*</sup></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName"
+                      name="lastName"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="studentEmail">Email Id <sup>*</sup></label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="studentEmail"
+                      name="studentEmail"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="contactNumber">Contact Number <sup>*</sup></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="contactNumber"
+                      name="contactNumber"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="parentContactNumber"
+                      >Parents Contact Number <sup>*</sup></label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="parentContactNumber"
+                      name="parentContactNumber"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="gender">Select Gender <sup>*</sup></label>
+                    <select id="gender" class="form-control" name="gender">
+                      <option value="">Select</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="semester">Semester <sup>*</sup></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="semester"
+                      name="semester"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="schoolcollege">School/College <sup>*</sup></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="schoolcollege"
+                      name="schoolcollege"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="permanentAddress">Premanent Address <sup>*</sup></label>
+                    <textarea
+                      class="form-control"
+                      id="permanentAddress"
+                      name="permanentAddress"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div class="input-group col-md-12">
+                  <div class="mb-3">
+                    <label for="uploadFile" class="form-label"
+                      >Default file input example</label
+                    >
+                    <input
+                      class="form-control"
+                      type="file"
+                      id="uploadFile"
+                      name="uploadFile"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <input type="submit" class="btn btn-primary" value="Add" />
+              <button
+                type="button"
+                class="btn btn-secondary btn-outline-primary"
+                data-dismiss="modal"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!------------------ Edit Student Details ------------------>
+    
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="resources/vendor/jquery/jquery.min.js"></script>
+    <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- For jQuery Validation -->
+    <script src="resources/vendor/jquery/jquery.validate.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="resources/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="resources/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="resources/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="resources/js/demo/datatables-demo.js"></script>
+
+    <!-- Custom Js -->
+
+    <script src="service/student/viewStudentDetails.js"></script>
+
+    <script src="service/student/addStudentDetails.js"></script>
+
+    <!-- Header -->
+    <script src="header/header.js"></script>
+
+    <!-- Menu -->
+    <script src="menu/menu.js"></script>
+
+    <!-- Footer -->
+    <script src="footer/footer.js"></script>
+  </body>
+</html>
